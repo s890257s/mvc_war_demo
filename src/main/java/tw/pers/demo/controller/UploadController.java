@@ -2,11 +2,14 @@ package tw.pers.demo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tw.pers.demo.model.dto.EmployeeDTO;
 
@@ -20,7 +23,7 @@ public class UploadController {
 
 	/**
 	 * 基本文字接收，使用情境為<br>
-	 * 1. 前端使用 form 或者 FormData<br>
+	 * 1. 前端使用 form元素 或者 FormData<br>
 	 * 2. 後端變數不多，可以逐一寫出<br>
 	 */
 	@PostMapping("/receive_form_text")
